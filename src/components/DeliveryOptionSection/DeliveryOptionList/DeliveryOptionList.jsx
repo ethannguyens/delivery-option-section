@@ -1,12 +1,14 @@
-function DeliveryOptionList(key, deliveryType, deliveryDate, deliveryDescription, deliveryPrice) {
+import React from 'react';
+
+function DeliveryOptionList(deliveryType, deliveryDate, deliveryDescription, deliveryPrice) {
   return (
-    <li id={key} className="DeliveryOptionList">
+    <li className="DeliveryOptionList">
       <input type="radio" className="DeliveryOptionList-radio"/>
       <label htmlFor="" className="DeliveryOptionsList-label">
-        <span className="DeliveryOptionList-type"></span>
+        <span className="DeliveryOptionList-type">{deliveryType}</span>
         <span className="DeliveryOptionList-date"></span>
         <span className="DeliveryOptionList-info"></span>
-        <span className="DeliveryOptionList-price"></span>
+        <span className="DeliveryOptionList-price">{deliveryPrice}</span>
       </label>
     </li>
   );

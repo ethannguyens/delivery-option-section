@@ -6,3 +6,4 @@ localhost-ssl/
 .git/
 .DS_store
 yarn-error.log
+npm-debug*/
