@@ -6,7 +6,6 @@ import DeliveryOptionList from '../DeliveryOptionList/DeliveryOptionList';
 import DeliveryOptions from '../../../api/mockDeliveryOption';
 
 
-
 class DeliveryOptionContainer extends React.Component {
   constructor(props, context) {
     super(props, context);
@@ -18,14 +17,10 @@ class DeliveryOptionContainer extends React.Component {
     return (
       <ul className="DeliveryOptionContainer">
         {this.data.deliveryOptions.map((item, index) => {
-          return (
-            <DeliveryOptionList key={index} deliveryType={item.optionName} deliveryDescription={item.optionAdvice} deliveryPrice={item.optionDiscountedPrice}/>
-          )
+          return <DeliveryOptionList key={index} index={index} item={item}/>;
         })}
-      </ul>
-    )
+      </ul>)
   }
-
 }
 
 export default DeliveryOptionContainer;

@@ -1,17 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function DeliveryOptionList(deliveryType, deliveryDate, deliveryDescription, deliveryPrice) {
+function DeliveryOptionList({index, item}) {
+  console.log(arguments);
   return (
-    <li className="DeliveryOptionList">
+    <li id={`DeliveryOptionList-${index}`} className="DeliveryOptionList">
       <input type="radio" className="DeliveryOptionList-radio"/>
       <label htmlFor="" className="DeliveryOptionsList-label">
-        <span className="DeliveryOptionList-type">{deliveryType}</span>
-        <span className="DeliveryOptionList-date"></span>
-        <span className="DeliveryOptionList-info"></span>
-        <span className="DeliveryOptionList-price">{deliveryPrice}</span>
+        <span className="DeliveryOptionList-type">{item.optionName}</span>
+        <span className="DeliveryOptionList-info">{item.optionAdvice}</span>
+        <p className="DeliveryOptionList-price">{item.optionDisplayPrice}</p>
+        <p className="DeliveryOptionList-discountedPrice">{item.optionDiscountedPrice}</p>
       </label>
     </li>
   );
 }
+
 
 export default DeliveryOptionList;
