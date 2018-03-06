@@ -27,22 +27,6 @@ describe('App', () => {
     // Arrange & Act
     const {wrapper} = setup();
     // Assert
-    expect(wrapper.find('App').hasClass('nguyene-insta-flickr')).toBe(true);
+    expect(wrapper.find('App').hasClass('App')).toBe(true);
   });
-
-  it('should render Header', () => {
-    // Arrange & Act
-    const {wrapper} = setup();
-    // Assert
-    expect(wrapper.find('Header').hasClass('header')).toBe(true);
-  });
-
-  it('should render Footer', () => {
-    // Arrange & Act
-    const {wrapper} = setup();
-    // Assert
-    expect(wrapper.find('Footer').hasClass('footer')).toBe(true);
-  });
-
-
 });
