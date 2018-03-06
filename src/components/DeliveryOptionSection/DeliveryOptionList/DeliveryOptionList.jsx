@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 
 function DeliveryOptionList({index, item}) {
   return (
@@ -14,6 +14,11 @@ function DeliveryOptionList({index, item}) {
     </li>
   );
 }
+
+DeliveryOptionList.propTypes = {
+  index: PropTypes.number.isRequired,
+  item: PropTypes.object.isRequired
+};
 
 
 export default DeliveryOptionList;

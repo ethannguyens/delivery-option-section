@@ -1,5 +1,6 @@
 import DeliveryOptionList from '../DeliveryOptionList/DeliveryOptionList';
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function DeliveryOptionListContainer({deliveryGroup}) {
   return (
@@ -11,5 +12,9 @@ function DeliveryOptionListContainer({deliveryGroup}) {
       </ul>
     </div>);
 }
+
+DeliveryOptionListContainer.propTypes = {
+  deliveryGroup: PropTypes.array.isRequired
+};
 
 export default DeliveryOptionListContainer;

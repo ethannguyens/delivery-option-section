@@ -1,6 +1,7 @@
 import React from 'react';
 import DeliveryOptionGroupContainer from "./DeliveryOptionGroupContainer/DeliveryOptionGroupContainer";
 import DeliveryOptions from '../../api/mockDeliveryOption';
+import PropTypes from 'prop-types';
 
 
 class DeliveryOptionSection extends React.Component {
@@ -12,8 +13,8 @@ class DeliveryOptionSection extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Delivery Options Section</h1>
+      <div className="DeliveryOptionSection">
+        <h1 className="DeliveryOptionSection-header">Delivery Options Section</h1>
         {this.data.deliveryGroups.map((group, index) => {
           return (
             <DeliveryOptionGroupContainer deliveryGroup={group} key={index}/>
@@ -23,5 +24,7 @@ class DeliveryOptionSection extends React.Component {
     );
   }
 }
+
+
 
 export default DeliveryOptionSection;
