@@ -10,14 +10,12 @@ class DeliveryOptionGroupContainer extends React.Component {
   render() {
     return (
       <div className="DeliveryOptionGroupContainer">
-        <a>
-          {this.props.deliveryGroup.basketItems.map((item, index) => {
-            return (
-              <DeliveryOptionProductImage imageList={item.productImage} key={index}/>
-            );
-          })}
-        </a>
-        <DeliveryOptionListContainer deliveryGroup={this.props.deliveryGroup.deliveryOptions} />
+        {this.props.deliveryGroup.basketItems.map((item, index) => {
+          return (
+            <DeliveryOptionProductImage imageList={item.productImage} key={index}/>
+          );
+        })}
+        <DeliveryOptionListContainer deliveryGroup={this.props.deliveryGroup.deliveryOptions}/>
       </div>);
   }
 }
