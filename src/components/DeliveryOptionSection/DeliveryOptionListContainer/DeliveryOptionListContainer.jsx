@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 function DeliveryOptionListContainer({deliveryGroup}) {
   return (
-    <div>
+    <div className="DeliveryOptionListSection">
       <ul className="DeliveryOptionListContainer">
         {deliveryGroup.map((item, index) => {
           return <DeliveryOptionList key={index} index={index} item={item}/>;

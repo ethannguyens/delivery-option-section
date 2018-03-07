@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function DeliveryOptionProductImage({imageList, index}){
   return (
-    <img alt={imageList[0].imageType} src={imageList[0].imageUrl} id={`DeliveryOptionProductImage-${index}`}/>
+    <img id={`DeliveryOptionProductImage-${index}`} className="DeliveryOptionProductImage" alt={imageList[0].imageType} src={imageList[0].imageUrl} />
   );
 }
 

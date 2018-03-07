@@ -3,6 +3,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {isTouchDevice} from '../modules/utility';
+import DeliveryOptionSection from './DeliveryOptionSection/DeliveryOptionSection';
+import DeliveryOptions from '../api/mockDeliveryOption';
 
 
 import '../styles/main.scss';
@@ -11,6 +13,8 @@ import './App.scss';
 class App extends React.Component {
   constructor() {
     super();
+
+    this.data = DeliveryOptions;
   }
 
   componentDidMount() {
@@ -25,6 +29,7 @@ class App extends React.Component {
   render() {
     return (
        <div className="App" ref={(app) => this.app = app}>
+         <DeliveryOptionSection deliveryOptions={DeliveryOptions}/>
          {this.props.children}
        </div>
     );
