@@ -5,18 +5,24 @@ import DeliveryOptionListContainer from './DeliveryOptionListContainer';
 
 function setup() {
   const props = {
-    deliveryGroup: [{
-      item: [{
-        innerItem: "something"
+    deliveryGroups: [{
+      deliveryOptions: [{
+        optionName: 'a',
+        optionAdvice: 'b',
+        optionDisplayPrice: 'c',
+        optionDiscountedPrice: 'd'
       }]
-    },{
-      item: [{
-        innerItem: "something"
+    }, {
+      deliveryOptions: [{
+        optionName: 'a',
+        optionAdvice: 'b',
+        optionDisplayPrice: 'c',
+        optionDiscountedPrice: 'd'
       }]
     }]
   };
 
-  const wrapper = mount(<DeliveryOptionListContainer deliveryGroup={props.deliveryGroup}/>);
+  const wrapper = mount(<DeliveryOptionListContainer deliveryGroup={props.deliveryGroups}/>);
 
   return {
     props,
@@ -47,6 +53,6 @@ describe('DeliveryOptionListContainer', () => {
     const {wrapper} = setup();
 
     //Assert
-    expect(wrapper.find('.DeliveryOptionListContainer').node.childNodes.length).toBe(2);
+    expect(wrapper.find('.DeliveryOptionListContainer').node.childElementCount).toBe(2);
   });
 });
