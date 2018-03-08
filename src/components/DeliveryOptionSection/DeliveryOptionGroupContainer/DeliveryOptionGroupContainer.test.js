@@ -7,9 +7,22 @@ function setup() {
   const props = {
     deliveryGroups: [{
       basketItems: [{
-        productImage: [{}]
+        productImage: [{
+          imageType: "thumbnail",
+          imageUrl: "image.jpg"
+        }]
+      }, {
+        productImage: [{
+          imageType: "thumbnail",
+          imageUrl: "image.jpg"
+        }]
       }],
-      deliveryOptions: [{}]
+      deliveryOptions: [{
+        optionName: 'a',
+        optionAdvice: 'b',
+        optionDisplayPrice: 'c',
+        optionDiscountedPrice: 'd'
+      }]
     }]
   };
 
@@ -31,13 +44,12 @@ describe('DeliveryOptionGroupContainer', () => {
     expect(wrapper.find('DeliveryOptionGroupContainer').hasClass('DeliveryOptionGroupContainer')).toBe(true);
   });
 
-  it('should render components with correct props', () => {
+  it('should render child components with correct props', () => {
     //Arrange & Act
     const {wrapper} = setup();
 
     //Assert
-    expect(wrapper.find('.DeliveryOptionGroupContainer').node.childNodes.length).toBe(2);
+    expect(wrapper.find('DeliveryOptionProductImage').length).toBe(2);
+    expect(wrapper.find('DeliveryOptionListContainer').length).toBe(1);
   });
 });
-
-
