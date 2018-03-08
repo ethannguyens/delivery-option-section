@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+require('./DeliveryOptionProductImage.scss');
+
 function DeliveryOptionProductImage({imageList, index}){
   return (
-    <img id={`DeliveryOptionProductImage-${index}`} className="DeliveryOptionProductImage" alt={imageList[0].imageType} src={imageList[0].imageUrl} />
+    <img id={`DeliveryOptionProductImage-${index}`} className="DeliveryOptionProductImage" alt={imageList[0].imageType} src={`https://${imageList[0].imageUrl}`} />
   );
 }
 

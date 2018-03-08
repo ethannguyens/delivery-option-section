@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import DeliveryOptionListContainer from '../DeliveryOptionListContainer/DeliveryOptionListContainer';
 import DeliveryOptionProductImage from '../DeliveryOptionProductImage/DeliveryOptionProductImage';
 
+require('./DeliveryOptionGroupContainer.scss');
+
 class DeliveryOptionGroupContainer extends React.Component {
   constructor(props, context) {
     super(props, context);
@@ -26,3 +28,4 @@ DeliveryOptionGroupContainer.propTypes = {
 };
 
 export default DeliveryOptionGroupContainer;
+
