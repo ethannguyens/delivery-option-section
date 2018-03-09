@@ -1,9 +1,6 @@
 .DeliveryOptionProductImage {
   max-width: 70px;
   max-height: 70px;
-  margin-right: 25px;
-  display: inline-block;
-  position: relative;
 }
 
 .DeliveryOptionProductImage-quantity {
@@ -18,9 +15,4 @@
 
 .DeliveryOptionProductImage-quantity.hide {
   display: none;
-}
-
-.DeliveryOptionProductImageContainer-lastImg {
-  display: inline-block;
-  position: relative;
 }

@@ -1,9 +1,19 @@
 .DeliveryOptionProductImageContainer {
+  .DeliveryOptionProductImage {
+    margin-right: 25px;
+    display: inline-block;
+    position: relative;
+  }
+}
+
+.DeliveryOptionProductImageContainer {
   width: 355px;
 }
 .DeliveryOptionProductImageContainer-lastImg {
   width: 70px;
   height: 70px;
+  display: inline-block;
+  position: relative;
 }
 
 .DeliveryOptionProductImageContainer-lastImg .DeliveryOptionProductImage {
@@ -22,7 +32,6 @@
   cursor: pointer;
   display: table;
 }
-
 
 .DeliveryOptionProductImageContainer-lastImg-button-num {
   margin: 0 auto;

@@ -9,6 +9,7 @@ class DeliveryOptionSection extends React.Component {
     super(props, context);
 
     this.data = props.deliveryOptions.deliveryGroupSet[0];
+    this.productPreview = false;
   }
 
   render() {

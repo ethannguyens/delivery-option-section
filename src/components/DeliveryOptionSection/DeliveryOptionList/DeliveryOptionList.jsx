@@ -5,7 +5,6 @@ import DOMPurify from 'dompurify';
 require('./DeliveryOptionList.scss');
 
 function DeliveryOptionList({index, deliveryOption}) {
-  console.log(deliveryOption.optionAdvice.length);
   return (
     <li id={`DeliveryOptionList-${index}`} className="DeliveryOptionList">
       <input type="radio" className="DeliveryOptionList-radio"/>

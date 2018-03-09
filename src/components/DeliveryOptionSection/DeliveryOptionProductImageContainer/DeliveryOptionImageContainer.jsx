@@ -4,7 +4,7 @@ import DeliveryOptionProductImage from '../DeliveryOptionProductImage/DeliveryOp
 
 require('./DeliveryOptionProductImageContainer.scss');
 
-function DeliveryOptionProductImageContainer({basketItems}) {
+function DeliveryOptionProductImageContainer({basketItems, openProductPreview}) {
   return (
     <div className="DeliveryOptionProductImageContainer">
       {basketItems.map((item, index) => {
@@ -17,7 +17,7 @@ function DeliveryOptionProductImageContainer({basketItems}) {
           return (<div className="DeliveryOptionProductImageContainer-lastImg" key={index}>
             <DeliveryOptionProductImage key={index} productImage={item.productImage} quantity={item.quantity}
                                         index={index}/>
-            <div className="DeliveryOptionProductImageContainer-lastImg-button">
+            <div className="DeliveryOptionProductImageContainer-lastImg-button" onClick={openProductPreview}>
                 <span className="DeliveryOptionProductImageContainer-lastImg-button-num">
                   +{basketItems.length - 4}
                 </span>
@@ -29,7 +29,8 @@ function DeliveryOptionProductImageContainer({basketItems}) {
 }
 
 DeliveryOptionProductImageContainer.propTypes = {
-  basketItems: PropTypes.array.isRequired
+  basketItems: PropTypes.array.isRequired,
+  openProductPreview: PropTypes.func.isRequired
 };
 
 export default DeliveryOptionProductImageContainer;
