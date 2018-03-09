@@ -1,6 +1,6 @@
-import DeliveryOptionList from '../DeliveryOptionList/DeliveryOptionList';
 import React from 'react';
 import PropTypes from 'prop-types';
+import DeliveryOptionList from '../DeliveryOptionList/DeliveryOptionList';
 
 require('./DeliveryOptionListContainer.scss');
 

@@ -1,6 +1,6 @@
 import React from 'react';
-import DeliveryOptionGroupContainer from "./DeliveryOptionGroupContainer/DeliveryOptionGroupContainer";
 import PropTypes from "prop-types";
+import DeliveryOptionGroupContainer from "./DeliveryOptionGroupContainer/DeliveryOptionGroupContainer";
 
 require('./DeliveryOptionSection.scss');
 

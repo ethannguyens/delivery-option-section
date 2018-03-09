@@ -5,13 +5,14 @@ import DOMPurify from 'dompurify';
 require('./DeliveryOptionList.scss');
 
 function DeliveryOptionList({index, deliveryOption}) {
+  console.log(deliveryOption.optionAdvice.length);
   return (
     <li id={`DeliveryOptionList-${index}`} className="DeliveryOptionList">
       <input type="radio" className="DeliveryOptionList-radio"/>
       <label htmlFor="" className="DeliveryOptionsList-label">
         <span className="DeliveryOptionList-type">{deliveryOption.optionName}</span>
         <span className="DeliveryOptionList-estimation" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(deliveryOption.optionEstimation)}} />
-        <span className="DeliveryOptionList-info" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(deliveryOption.optionAdvice)}} />
+        {deliveryOption.optionAdvice.length > 6 ? <span className="DeliveryOptionList-info" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(deliveryOption.optionAdvice)}} /> : ""}
         <span className="DeliveryOptionList-price" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(deliveryOption.optionDisplayPrice)}} />
         <span className="DeliveryOptionList-discountedPrice" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(deliveryOption.optionDiscountedPrice)}} />
       </label>

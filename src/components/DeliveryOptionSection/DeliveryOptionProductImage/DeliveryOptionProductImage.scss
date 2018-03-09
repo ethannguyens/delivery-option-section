@@ -1,4 +1,26 @@
 .DeliveryOptionProductImage {
   max-width: 70px;
   max-height: 70px;
+  margin-right: 25px;
+  display: inline-block;
+  position: relative;
+}
+
+.DeliveryOptionProductImage-quantity {
+  color: #333; //brand color
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #dae2e3;
+  padding: 0 4px;
+  font-size: 14px;
+}
+
+.DeliveryOptionProductImage-quantity.hide {
+  display: none;
+}
+
+.DeliveryOptionProductImageContainer-lastImg {
+  display: inline-block;
+  position: relative;
 }

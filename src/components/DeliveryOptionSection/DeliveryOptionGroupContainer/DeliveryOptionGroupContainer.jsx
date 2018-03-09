@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import DeliveryOptionListContainer from '../DeliveryOptionListContainer/DeliveryOptionListContainer';
-import DeliveryOptionProductImage from '../DeliveryOptionProductImage/DeliveryOptionProductImage';
+import DeliveryOptionProductImageContainer from '../DeliveryOptionProductImageContainer/DeliveryOptionImageContainer';
 
 require('./DeliveryOptionGroupContainer.scss');
 
@@ -13,11 +13,7 @@ class DeliveryOptionGroupContainer extends React.Component {
   render() {
     return (
       <div className="DeliveryOptionGroupContainer">
-        {this.props.deliveryGroup.basketItems.map((item, index) => {
-          return (
-            <DeliveryOptionProductImage key={index} imageList={item.productImage} index={index}/>
-          );
-        })}
+        <DeliveryOptionProductImageContainer basketItems={this.props.deliveryGroup.basketItems}/>
         <DeliveryOptionListContainer deliveryGroup={this.props.deliveryGroup.deliveryOptions}/>
       </div>);
   }
