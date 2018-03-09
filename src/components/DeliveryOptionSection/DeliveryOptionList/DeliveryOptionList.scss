@@ -1,3 +1,76 @@
+.DeliveryOptionList {
+  padding: 9px 12px;
+  border: 0.5px #bbbbbb solid;
+ }
+
+
+.DeliveryOptionList-radio {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+
+  height: 16px;
+  width: 16px;
+}
+
+
+.DeliveryOptionsList-label {
+  display: inline-block;
+  vertical-align: middle;
+
+  width: 90%;
+}
+
+
 .DeliveryOptionsList-label span {
   display: block;
+
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 16px;
+  letter-spacing: 0.2px;
+}
+
+
+.DeliveryOptionList-type {
+  color: #333333;
+
+  display: inline;
+  float: left;
+  padding-right: 5px;
+}
+
+
+.DeliveryOptionList-estimation:before {
+  content: " - ";
+
+  color: #777777;
+  font-weight: normal;
+}
+
+
+.DeliveryOptionList-estimation {
+  color: #333333;
+  font-weight: bold;
+}
+
+
+.DeliveryOptionList-info{
+  color: #666666;
+}
+
+
+.DeliveryOptionList-price{
+  color: #333333;
+  text-decoration: line-through;
+
+  display: inline;
+  float: left;
+  padding-right: 5px;
+}
+
+
+.DeliveryOptionList-discountedPrice{
+  color: #3eb14f;
+  font-weight: bold;
 }

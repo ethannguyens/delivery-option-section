@@ -6,7 +6,6 @@ require('./DeliveryOptionSection.scss');
 
 class DeliveryOptionSection extends React.Component {
   constructor(props, context) {
-    console.log(props);
     super(props, context);
 
     this.data = props.deliveryOptions.deliveryGroupSet[0];
