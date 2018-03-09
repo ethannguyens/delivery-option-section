@@ -5,6 +5,14 @@
  }
 
 
+.DeliveryOptionList--selected {
+  border-color: deepskyblue; //Replace with brand color
+
+  z-index: 1;
+  position: relative;
+}
+
+
 .DeliveryOptionList-radio {
   display: inline-block;
   vertical-align: middle;
