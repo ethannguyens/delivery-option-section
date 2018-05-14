@@ -16,28 +16,6 @@ const deliveryOptions =
           }],
           "quantity": 1,
           "primaryContributor": null,
-          "productType": 6600,
-          "productUrl": "sports-nutrition/peanut-butter-crunchy-1kg/10530744.html",
-          "productImage": [{
-            "imageType": "thumbnail",
-            "imageUrl": "s1.thcdn.com//productimg/70/70/10530743-2084412757165438.jpg"
-          }],
-          "selectedDeliveryOptionType": 2,
-          "productTitle": "Peanut Butter - 1kg - Tub - Original - Crunchy",
-          "productTypeName": "Sports Nutrition",
-          "itemPrice": "&#163;5.99",
-          "productId": 10530744,
-          "shippable": true
-        }, {
-          "deliveryOptionEstimates": [{
-            "optionType": 2,
-            "displayText": "Delivered the next working day by courier."
-          }, {"optionType": 1, "displayText": "Usually delivered within 2-3 working days."}, {
-            "optionType": 7,
-            "displayText": "Delivered the next working day by courier."
-          }],
-          "quantity": 1,
-          "primaryContributor": null,
           "productType": 75124,
           "productUrl": "sports-sweatshirt/superlite-zip-up-hoodie-black-xxl/11360497.html",
           "productImage": [{

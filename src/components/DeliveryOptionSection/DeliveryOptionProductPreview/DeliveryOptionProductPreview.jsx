@@ -11,7 +11,7 @@ function DeliveryOptionProductPreview({basketItems, closeProductPreview}) {
             <div
               className="DeliveryOptionProductPreview-content-header-text">"Your Basket"</div>
             <span className="DeliveryOptionProductPreview-content-header-close"
-                  onClick={close}/>
+                  onClick={closeProductPreview}/>
           </div>
           <div className="DeliveryOptionProductPreview-content-body">
             <DeliveryOptionProductListContainer basketItems={basketItems}/>

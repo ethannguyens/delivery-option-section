@@ -4,7 +4,7 @@ class DeliveryOptionApi {
   static getDeliveryOption() {
     return new Promise((resolve, reject) => {
       resolve(deliveryOptions);
-    })
+    });
   }
 }
 

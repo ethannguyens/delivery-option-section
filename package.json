@@ -86,7 +86,7 @@
     "mocha": "3.5.0",
     "mocha-loader": "^1.1.1",
     "nock": "9.0.14",
-    "node-sass": "3.13.0",
+    "node-sass": "^3.13.0",
     "npm-run-all": "1.8.0",
     "null-loader": "^0.1.1",
     "open": "0.0.5",
