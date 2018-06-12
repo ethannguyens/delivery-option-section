@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from "prop-types";
 import DeliveryOptionProductList from '../DeliveryOptionProductList/DeliveryOptionProductList';
 
+require('./DeliveryOptionProductListContainer.scss');
+
 function DeliveryOptionProductListContainer({basketItems}) {
   return(
     <div className="DeliveryOptionProductListContainer">

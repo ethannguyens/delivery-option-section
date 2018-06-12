@@ -1,0 +1,26 @@
+.DeliveryOptionProductList {
+  border-top: solid 1px #ddd;
+  position: relative;
+  padding: 16px;
+}
+
+.DeliveryOptionProductList:last-child {
+  border-bottom: solid 1px #ddd;
+}
+
+.DeliveryOptionProductList-title {
+  width: 65%;
+  display: inline-block;
+  height: 70px;
+  margin: 0;
+  position: absolute;
+  color: #333333;
+  font-size: 14px;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+.DeliveryOptionProductList .DeliveryOptionProductImage {
+  display: inline-block;
+}
+

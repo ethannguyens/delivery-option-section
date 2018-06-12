@@ -4,6 +4,10 @@
     display: inline-block;
     position: relative;
   }
+
+  .DeliveryOptionProductImage:last-child {
+    margin-right: 0;
+  }
 }
 
 .DeliveryOptionProductImageContainer {

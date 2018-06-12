@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import DeliveryOptionProductListContainer from '../DeliveryOptionProductListContainer/DeliveryOptionProductListContainer'
+import DeliveryOptionProductListContainer from '../DeliveryOptionProductListContainer/DeliveryOptionProductListContainer';
+import DeliveryOptionProductClose from './DeliveryOptionProductClose.svg';
+
+require('./DeliveryOptionProductPreview.scss');
 
 function DeliveryOptionProductPreview({basketItems, closeProductPreview}) {
   return(
@@ -9,8 +12,8 @@ function DeliveryOptionProductPreview({basketItems, closeProductPreview}) {
         <div className="DeliveryOptionProductPreview-content">
           <div className="DeliveryOptionProductPreview-content-header">
             <div
-              className="DeliveryOptionProductPreview-content-header-text">"Your Basket"</div>
-            <span className="DeliveryOptionProductPreview-content-header-close"
+              className="DeliveryOptionProductPreview-content-header-text">Your Items</div>
+            <img src={DeliveryOptionProductClose} className="DeliveryOptionProductPreview-content-header-close"
                   onClick={closeProductPreview}/>
           </div>
           <div className="DeliveryOptionProductPreview-content-body">
