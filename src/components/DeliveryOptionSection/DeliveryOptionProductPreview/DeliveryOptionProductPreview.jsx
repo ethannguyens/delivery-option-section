@@ -5,6 +5,11 @@ import DeliveryOptionProductClose from './DeliveryOptionProductClose.svg';
 
 require('./DeliveryOptionProductPreview.scss');
 
+//Testing purposes. Need to remove before production
+window.siteObj = {
+  siteHomePage: "https://www.myprotein.com/"
+};
+
 function DeliveryOptionProductPreview({basketItems, closeProductPreview}) {
   return(
     <div className="DeliveryOptionProductPreview">
@@ -21,7 +26,7 @@ function DeliveryOptionProductPreview({basketItems, closeProductPreview}) {
           </div>
           <div className="DeliveryOptionProductPreview-content-footer">
             <button className="DeliveryOptionProductPreview-content-footer-return" onClick={closeProductPreview}>Return To Checkout</button>
-            <a href="" className="DeliveryOptionProductPreview-content-footer-basket">Edit My Basket</a>
+            {window.siteObj ? <a href={`${window.siteObj.siteHomePage}my.basket`} className="DeliveryOptionProductPreview-content-footer-basket">Edit My Basket</a> : ""}
           </div>
         </div>
       </div>

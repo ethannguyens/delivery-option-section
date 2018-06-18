@@ -4,19 +4,21 @@ import DeliveryOptionList from '../DeliveryOptionList/DeliveryOptionList';
 
 require('./DeliveryOptionListContainer.scss');
 
-function DeliveryOptionListContainer({deliveryGroup}) {
+function DeliveryOptionListContainer({deliveryGroup, handleChange, selectedOptionType}) {
   return (
-    <div className="DeliveryOptionListSection">
+    <div className="DeliveryOptionListSection" onChange={handleChange}>
       <ul className="DeliveryOptionListContainer">
         {deliveryGroup.map((deliveryOption, index) => {
-          return <DeliveryOptionList key={index} index={index} deliveryOption={deliveryOption}/>;
+          return <DeliveryOptionList selectedOptionType={selectedOptionType} key={index} index={index} deliveryOption={deliveryOption}/>;
         })}
       </ul>
     </div>);
 }
 
 DeliveryOptionListContainer.propTypes = {
-  deliveryGroup: PropTypes.array.isRequired
+  deliveryGroup: PropTypes.array.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  selectedOptionType: PropTypes.number.isRequired
 };
 
 export default DeliveryOptionListContainer;

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import DeliveryOptionListContainer from '../DeliveryOptionListContainer/DeliveryOptionListContainer';
 import DeliveryOptionProductImageContainer from '../DeliveryOptionProductImageContainer/DeliveryOptionImageContainer';
 import DeliveryOptionProductPreview from '../DeliveryOptionProductPreview/DeliveryOptionProductPreview';
+
 require('./DeliveryOptionGroupContainer.scss');
 
 class DeliveryOptionGroupContainer extends React.Component {
@@ -12,10 +13,16 @@ class DeliveryOptionGroupContainer extends React.Component {
     this.renderProductPreview = this.renderProductPreview.bind(this);
     this.closeProductPreview = this.closeProductPreview.bind(this);
     this.openProductPreview = this.openProductPreview.bind(this);
+    this.handleChange = this.handleChange.bind(this);
 
     this.state = {
-      productPreview: false
+      productPreview: false,
+      selectedOptionType: 0
     };
+  }
+
+  handleChange(event) {
+    this.setState(Object.assign({}, this.state, {selectedOptionType: Number(event.target.value)}));
   }
 
   closeProductPreview() {
@@ -28,15 +35,19 @@ class DeliveryOptionGroupContainer extends React.Component {
 
   renderProductPreview() {
     return (
-      <DeliveryOptionProductPreview closeProductPreview={this.closeProductPreview} basketItems={this.props.deliveryGroup.basketItems}/>
+      <DeliveryOptionProductPreview closeProductPreview={this.closeProductPreview}
+                                    basketItems={this.props.deliveryGroup.basketItems}/>
     );
   }
 
   render() {
     return (
       <div className="DeliveryOptionGroupContainer">
-        <DeliveryOptionProductImageContainer basketItems={this.props.deliveryGroup.basketItems} openProductPreview={this.openProductPreview}/>
-        <DeliveryOptionListContainer deliveryGroup={this.props.deliveryGroup.deliveryOptions}/>
+        <DeliveryOptionProductImageContainer basketItems={this.props.deliveryGroup.basketItems}
+                                             openProductPreview={this.openProductPreview}/>
+        <DeliveryOptionListContainer handleChange={this.handleChange}
+                                     selectedOptionType={this.state.selectedOptionType}
+                                     deliveryGroup={this.props.deliveryGroup.deliveryOptions}/>
         {this.state.productPreview && this.renderProductPreview()}
       </div>);
   }
