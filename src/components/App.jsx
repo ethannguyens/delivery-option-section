@@ -3,8 +3,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {isTouchDevice} from '../modules/utility';
+import * as deliveryOptionAction from '../actions/deliveryOptionActions';
+import store from '../store/store';
+
 import DeliveryOptionSection from './DeliveryOptionSection/DeliveryOptionSection';
-import DeliveryOptions from '../api/mockDeliveryOption';
+
+store.dispatch(deliveryOptionAction.getDeliveryOptions());
 
 
 import '../styles/main.scss';
@@ -13,8 +17,6 @@ import './App.scss';
 class App extends React.Component {
   constructor() {
     super();
-
-    this.data = DeliveryOptions;
   }
 
   componentDidMount() {
@@ -29,7 +31,7 @@ class App extends React.Component {
   render() {
     return (
        <div className="App" ref={(app) => this.app = app}>
-         <DeliveryOptionSection deliveryOptions={DeliveryOptions}/>
+         <DeliveryOptionSection />
          {this.props.children}
        </div>
     );
@@ -41,10 +43,13 @@ App.propTypes = {
   loading: PropTypes.bool.isRequired
 };
 
+
+
 function mapStateToProps(state, ownProps) {
   return {
-    loading: state.ajaxCallsInProgress > 0
+    loading: state.ajaxCallsInProgress > 0,
   };
 }
+
 
 export default connect(mapStateToProps)(App);

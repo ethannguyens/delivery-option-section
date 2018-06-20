@@ -7,12 +7,11 @@ import {Provider} from 'react-redux';
 import {Router, browserHistory} from 'react-router';
 import routes from './routes';
 import {saveState} from './store/localStorage';
+import store from './store/store'
 
-const store = configureStore();
-
-store.subscribe(() => {
-  saveState(store.getState());
-});
+// store.subscribe(() => {
+//   saveState(store.getState());
+// });
 
 render(
   <Provider store={store}>

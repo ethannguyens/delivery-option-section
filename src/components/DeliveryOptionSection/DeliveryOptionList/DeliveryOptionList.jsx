@@ -7,8 +7,8 @@ require('./DeliveryOptionList.scss');
 function DeliveryOptionList({index, deliveryOption, selectedOptionType}) {
   return (
     <li id={`DeliveryOptionList-${index}`} className="DeliveryOptionList">
-      <input type="radio" checked={selectedOptionType === deliveryOption.optionType} value={deliveryOption.optionType} className="DeliveryOptionList-radio"/>
-      <label htmlFor="" className="DeliveryOptionsList-label">
+      <input type="radio" id={`DeliveryOptionListOptionType--${deliveryOption.optionType}`} checked={selectedOptionType === deliveryOption.optionType} value={deliveryOption.optionType} className="DeliveryOptionList-radio"/>
+      <label htmlFor={`DeliveryOptionListOptionType--${deliveryOption.optionType}`} className="DeliveryOptionsList-label">
         <span className="DeliveryOptionList-type">{deliveryOption.optionName}</span>
         <span className="DeliveryOptionList-estimation" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(deliveryOption.optionEstimation)}} />
         {deliveryOption.optionAdvice.length > 6 ? <span className="DeliveryOptionList-info" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(deliveryOption.optionAdvice)}} /> : ""}
