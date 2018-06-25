@@ -4,10 +4,12 @@ import React from 'react';
 import { render } from 'react-dom';
 import configureStore from './store/configureStore';
 import {Provider} from 'react-redux';
-import {Router, browserHistory} from 'react-router';
+import {BrowserRouter as Router} from 'react-router-dom';
 import routes from './routes';
 import {saveState} from './store/localStorage';
 import store from './store/store'
+import App from './components/App.jsx';
+
 
 // store.subscribe(() => {
 //   saveState(store.getState());
@@ -15,7 +17,7 @@ import store from './store/store'
 
 render(
   <Provider store={store}>
-    <Router history={browserHistory} routes={routes} />
+    <App />
   </Provider>,
   document.getElementById('app')
 );

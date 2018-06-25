@@ -4,6 +4,6 @@ import App from './components/App.jsx';
 
 export default (
   <Route path="/" component={App}>
-    {/*<IndexRoute component={DeliveryOptionSection} />*/}
+    {/*<IndexRoute component={App} />*/}
   </Route>
 );
