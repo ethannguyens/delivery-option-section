@@ -18,15 +18,15 @@ function submitSelectedDeliveryOption(data) {
 
 }
 
-function extractDeliveryBasketItems(deliveryOptionData) {
-  let basketItems = [];
-  for (let deliveryGroupSet of deliveryOptionData.deliveryGroupSet) {
-    for (let deliveryGroup of deliveryGroupSet.deliveryGroups) {
-        basketItems = basketItems.concat(deliveryGroup.basketItems)
-    }
-  }
-  return basketItems;
-}
+// function extractDeliveryBasketItems(deliveryOptionData) {
+//   let basketItems = [];
+//   for (let deliveryGroupSet of deliveryOptionData.deliveryGroupSet) {
+//     for (let deliveryGroup of deliveryGroupSet.deliveryGroups) {
+//         basketItems = basketItems.concat(deliveryGroup.basketItems)
+//     }
+//   }
+//   return basketItems;
+// }
 
 function extractDeliveryGroups(deliveryOptionData) {
   let deliveryGroups = [];
@@ -50,9 +50,9 @@ function extractDeliveryGroups(deliveryOptionData) {
 class DeliveryOptionApi {
   static getDeliveryOption() {
     return new Promise((resolve, reject) => {
-      const basketItems = extractDeliveryBasketItems(deliveryOptionData);
+      // const basketItems = extractDeliveryBasketItems(deliveryOptionData);
       const {deliveryGroups, deliveryGroupsData}= extractDeliveryGroups(deliveryOptionData);
-      resolve({deliveryGroups: deliveryGroups, deliveryGroupsData: deliveryGroupsData, basketItems: basketItems});
+      resolve({deliveryGroups: deliveryGroups, deliveryGroupsData: deliveryGroupsData});
     });
   }
 }

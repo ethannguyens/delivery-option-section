@@ -14,11 +14,15 @@ export function disableProductPreview(productPreview = false) {
 }
 
 export function updateDeliveryOptionBasketItems(basketItems) {
-  return {type: types.UPDATE_DELIVERY_OPTION_BASKET_ITEMS, basketItems}
+  return {type: types.UPDATE_DELIVERY_OPTION_BASKET_ITEMS, basketItems};
 }
 
 export function updateDeliveryOptions(deliveryOptions) {
-  return {type: types.UPDATE_DELIVERY_OPTIONS, deliveryOptions}
+  return {type: types.UPDATE_DELIVERY_OPTIONS, deliveryOptions};
+}
+
+export function updateFocusItem(focusItem) {
+  return {type: types.UPDATE_FOCUS_ITEM, focusItem};
 }
 
 export function updateDeliveryGroups(deliveryGroups, deliveryGroupsData) {
@@ -32,7 +36,7 @@ export function updateDeliveryGroups(deliveryGroups, deliveryGroupsData) {
 export function getDeliveryOptions() {
   return dispatch => {
     DeliveryOptionApi.getDeliveryOption().then(({deliveryGroups, deliveryGroupsData, basketItems}) => {
-      dispatch(updateDeliveryOptionBasketItems(basketItems));
+      // dispatch(updateDeliveryOptionBasketItems(basketItems));
       dispatch(updateDeliveryGroups(deliveryGroups, deliveryGroupsData));
     });
   }

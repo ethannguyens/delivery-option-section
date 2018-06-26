@@ -4,20 +4,34 @@ import DeliveryOptionProductImage from '../DeliveryOptionProductImage/DeliveryOp
 
 require('./DeliveryOptionProductList.scss');
 
-function DeliveryOptionProductList({item, index}) {
-  return (
-    <div className="DeliveryOptionProductList">
-      <DeliveryOptionProductImage key={index} productImage={item.productImage} quantity={item.quantity}
-                                  index={index}/>
-      <p className="DeliveryOptionProductList-title">{item.productTitle}</p>
-    </div>
-  );
-}
+class DeliveryOptionProductList extends React.Component {
+  constructor(props, context) {
+    super(props, context);
+  }
 
+  componentDidMount() {
+    if (this.props.groupIndex === this.props.focusItem[0] && this.props.index === this.props.focusItem[1]) {
+      this.element.scrollIntoView({block: 'end', behavior: 'smooth'});
+    }
+  }
+
+
+  render() {
+    return (
+      <div id={`DeliveryOptionProductList-${this.props.index}`} group-index={this.props.groupIndex} className="DeliveryOptionProductList" ref={(el) => this.element = el}>
+        <DeliveryOptionProductImage key={this.props.index} productImage={this.props.item.productImage} quantity={this.props.item.quantity}
+                                    index={this.props.index}/>
+        <p className="DeliveryOptionProductList-title">{this.props.item.productTitle}</p>
+      </div>
+    );
+  }
+}
 
 DeliveryOptionProductList.propTypes = {
   item: PropTypes.object.isRequired,
-  index: PropTypes.number.isRequired
+  focusItem: PropTypes.array.isRequired,
+  index: PropTypes.number.isRequired,
+  groupIndex: PropTypes.number.isRequired
 };
 
 export default DeliveryOptionProductList;

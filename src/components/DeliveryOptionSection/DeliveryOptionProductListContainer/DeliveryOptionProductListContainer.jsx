@@ -4,21 +4,23 @@ import DeliveryOptionProductList from '../DeliveryOptionProductList/DeliveryOpti
 
 require('./DeliveryOptionProductListContainer.scss');
 
-function DeliveryOptionProductListContainer({basketItems}) {
+function DeliveryOptionProductListContainer({deliveryOption}) {
   return(
     <div className="DeliveryOptionProductListContainer">
-      {basketItems.map((item, index) => {
+      {deliveryOption.deliveryGroups.map((deliveryGroup, groupIndex) => {
+        return deliveryOption[`deliveryGroup-${groupIndex}`].basketItems.map((item, index) => {
           return (
-            <DeliveryOptionProductList key={index} item={item} index={index}/>
+            <DeliveryOptionProductList focusItem={deliveryOption.focusItem} key={index} item={item} index={index} groupIndex={groupIndex}/>
           );
-        })
+        });
+      })
       }
     </div>
   );
 }
 
 DeliveryOptionProductListContainer.propTypes = {
-  basketItems: PropTypes.array.isRequired
+  deliveryOption: PropTypes.object.isRequired
 };
 
 export default DeliveryOptionProductListContainer;

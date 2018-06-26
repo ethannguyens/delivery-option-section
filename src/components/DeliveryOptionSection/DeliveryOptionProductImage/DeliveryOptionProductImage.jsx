@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 
 require('./DeliveryOptionProductImage.scss');
 
-function DeliveryOptionProductImage({productImage, index, quantity}){
+function DeliveryOptionProductImage({groupIndex, openProductPreview, productImage, index, quantity}){
   return (
-    <div id={`DeliveryOptionProductImage-${index}`} className="DeliveryOptionProductImage">
-      <img className="DeliveryOptionProductImage-img" alt={productImage[0].imageType} src={`https://${productImage[0].imageUrl}`} />
+    <div onClick={openProductPreview && openProductPreview} id={`DeliveryOptionProductImage-${index}`} className="DeliveryOptionProductImage">
+      <img className="DeliveryOptionProductImage-img" group-index={groupIndex} item-index={index} alt={productImage[0].imageType} src={`https://${productImage[0].imageUrl}`} />
       {quantity > 1 ? <span className="DeliveryOptionProductImage-quantity">x{quantity}</span> : ""}
     </div>
   );
@@ -14,6 +14,7 @@ function DeliveryOptionProductImage({productImage, index, quantity}){
 
 DeliveryOptionProductImage.propTypes = {
   productImage: PropTypes.array.isRequired,
+  openProductPreview: PropTypes.func,
   index: PropTypes.number.isRequired
 };
 

@@ -17,6 +17,9 @@ export default function deliveryOptionReducer(state = initialState.deliveryOptio
     case types.UPDATE_DELIVERY_OPTION_BASKET_ITEMS:
       return Object.assign({}, state, {basketItems: action.basketItems});
 
+    case types.UPDATE_FOCUS_ITEM:
+      return Object.assign({}, state, {focusItem: action.focusItem});
+
     case types.UPDATE_DELIVERY_GROUPS:
       let newState = Object.assign({}, state);
       Object.assign(newState, {deliveryGroups: action.deliveryGroupsPayload.deliveryGroups});

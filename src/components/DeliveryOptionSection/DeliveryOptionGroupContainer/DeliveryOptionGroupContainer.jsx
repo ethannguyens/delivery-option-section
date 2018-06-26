@@ -22,14 +22,15 @@ class DeliveryOptionGroupContainer extends React.Component {
     this.props.actions.updateSelectedOptionType(event.target.value);
   }
 
-  openProductPreview() {
+  openProductPreview(event) {
+    this.props.actions.updateFocusItem([Number(event.target.getAttribute('group-index')), Number(event.target.getAttribute('item-index'))]);
     this.props.actions.enableProductPreview();
   }
 
   render() {
     return (
       <div className="DeliveryOptionGroupContainer">
-        <DeliveryOptionProductImageContainer basketItems={this.props.deliveryGroup.basketItems}
+        <DeliveryOptionProductImageContainer groupIndex={this.props.groupIndex} basketItems={this.props.deliveryGroup.basketItems}
                                              openProductPreview={this.openProductPreview}/>
         <DeliveryOptionListContainer handleChange={this.handleChange}
                                      selectedOptionType={Number(this.props.deliveryOption.selectedOptionType)}
@@ -39,7 +40,8 @@ class DeliveryOptionGroupContainer extends React.Component {
 }
 
 DeliveryOptionGroupContainer.propTypes = {
-  deliveryGroup: PropTypes.object.isRequired
+  deliveryGroup: PropTypes.object.isRequired,
+  groupIndex: PropTypes.number.isRequired
 };
 
 function mapStateToProps(state, ownProps) {

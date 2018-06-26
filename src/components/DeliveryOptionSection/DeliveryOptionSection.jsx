@@ -29,10 +29,10 @@ class DeliveryOptionSection extends React.Component {
         <h1 className="DeliveryOptionSection-header">Delivery Options</h1>
         {this.props.deliveryOption.deliveryGroups.map((group, index) => {
           return (
-            <DeliveryOptionGroupContainer deliveryGroup={this.props.deliveryOption[`deliveryGroup-${group}`]} key={index}/>
+            <DeliveryOptionGroupContainer groupIndex={index} deliveryGroup={this.props.deliveryOption[`deliveryGroup-${group}`]} key={index}/>
           );
         })}
-        {this.props.deliveryOption.productPreview && <DeliveryOptionProductPreview basketItems={this.props.deliveryOption.basketItems} closeProductPreview={this.closeProductPreview}/>}
+        {this.props.deliveryOption.productPreview && <DeliveryOptionProductPreview deliveryOption={this.props.deliveryOption} closeProductPreview={this.closeProductPreview}/>}
       </div>
     );
   }

@@ -10,7 +10,7 @@ window.siteObj = {
   siteHomePage: "https://www.myprotein.com/"
 };
 
-function DeliveryOptionProductPreview({basketItems, closeProductPreview}) {
+function DeliveryOptionProductPreview({deliveryOption, closeProductPreview}) {
   return(
     <div className="DeliveryOptionProductPreview">
       <div className="DeliveryOptionProductPreview-overlay">
@@ -22,7 +22,7 @@ function DeliveryOptionProductPreview({basketItems, closeProductPreview}) {
                   onClick={closeProductPreview}/>
           </div>
           <div className="DeliveryOptionProductPreview-content-body">
-            <DeliveryOptionProductListContainer basketItems={basketItems}/>
+            <DeliveryOptionProductListContainer deliveryOption={deliveryOption}/>
           </div>
           <div className="DeliveryOptionProductPreview-content-footer">
             <button className="DeliveryOptionProductPreview-content-footer-return" onClick={closeProductPreview}>Return To Checkout</button>
@@ -35,7 +35,7 @@ function DeliveryOptionProductPreview({basketItems, closeProductPreview}) {
 }
 
 DeliveryOptionProductPreview.propTypes = {
-  basketItems: PropTypes.array.isRequired,
+  deliveryOption: PropTypes.object.isRequired,
   closeProductPreview: PropTypes.func.isRequired
 };
 
