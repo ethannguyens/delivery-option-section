@@ -1,8 +1,13 @@
 import * as types from './actionTypes';
 import DeliveryOptionApi from '../api/delivery-option-api';
 
-export function updateSelectedOptionType(selectedOptionType) {
-  return {type: types.UPDATE_SELECTED_OPTION_TYPE, selectedOptionType};
+export function updateSelectedOptionType(groupId, selectedOptionType) {
+  const selectedOption = {
+    groupId: groupId,
+    selectedOptionType: selectedOptionType
+  };
+
+  return {type: types.UPDATE_SELECTED_OPTION_TYPE, selectedOption}
 }
 
 export function enableProductPreview(productPreview = true) {
@@ -35,8 +40,7 @@ export function updateDeliveryGroups(deliveryGroups, deliveryGroupsData) {
 
 export function getDeliveryOptions() {
   return dispatch => {
-    DeliveryOptionApi.getDeliveryOption().then(({deliveryGroups, deliveryGroupsData, basketItems}) => {
-      // dispatch(updateDeliveryOptionBasketItems(basketItems));
+    DeliveryOptionApi.getDeliveryOption().then(({deliveryGroups, deliveryGroupsData}) => {
       dispatch(updateDeliveryGroups(deliveryGroups, deliveryGroupsData));
     });
   }

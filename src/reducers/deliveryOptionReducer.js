@@ -4,9 +4,12 @@ import initialState from './deliveryOptionInitialState';
 
 
 export default function deliveryOptionReducer(state = initialState.deliveryOption, action) {
+  let newState;
   switch (action.type) {
     case types.UPDATE_SELECTED_OPTION_TYPE:
-      return Object.assign({}, state, {selectedOptionType: action.selectedOptionType});
+      newState = Object.assign({}, state);
+      newState[`deliveryGroup-${action.selectedOption.groupId}`].selectedOptionType = action.selectedOption.selectedOptionType;
+      return newState;
 
     case types.ENABLE_PRODUCT_PREVIEW:
       return Object.assign({}, state, {productPreview: action.productPreview});
@@ -21,7 +24,7 @@ export default function deliveryOptionReducer(state = initialState.deliveryOptio
       return Object.assign({}, state, {focusItem: action.focusItem});
 
     case types.UPDATE_DELIVERY_GROUPS:
-      let newState = Object.assign({}, state);
+      newState = Object.assign({}, state);
       Object.assign(newState, {deliveryGroups: action.deliveryGroupsPayload.deliveryGroups});
       for (let i in action.deliveryGroupsPayload.deliveryGroupsData) {
         const deliveryGroup = {};

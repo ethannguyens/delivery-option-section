@@ -19,29 +19,30 @@ class DeliveryOptionGroupContainer extends React.Component {
   }
 
   handleChange(event) {
-    this.props.actions.updateSelectedOptionType(event.target.value);
+    this.props.actions.updateSelectedOptionType(event.target.getAttribute("group-id"), Number(event.target.value));
   }
 
   openProductPreview(event) {
-    this.props.actions.updateFocusItem([Number(event.target.getAttribute('group-index')), Number(event.target.getAttribute('item-index'))]);
+    this.props.actions.updateFocusItem([Number(event.target.getAttribute('group-id')), Number(event.target.getAttribute('item-index'))]);
     this.props.actions.enableProductPreview();
   }
 
   render() {
     return (
       <div className="DeliveryOptionGroupContainer">
-        <DeliveryOptionProductImageContainer groupIndex={this.props.groupIndex} basketItems={this.props.deliveryGroup.basketItems}
+        <DeliveryOptionProductImageContainer groupId={this.props.groupId} basketItems={this.props.deliveryGroup.basketItems}
                                              openProductPreview={this.openProductPreview}/>
         <DeliveryOptionListContainer handleChange={this.handleChange}
-                                     selectedOptionType={Number(this.props.deliveryOption.selectedOptionType)}
-                                     deliveryGroup={this.props.deliveryGroup.deliveryOptions}/>
+                                     groupId={this.props.groupId}
+                                     selectedOptionType={Number(this.props.deliveryGroup.selectedOptionType)}
+                                     deliveryOptions={this.props.deliveryGroup.deliveryOptions}/>
       </div>);
   }
 }
 
 DeliveryOptionGroupContainer.propTypes = {
   deliveryGroup: PropTypes.object.isRequired,
-  groupIndex: PropTypes.number.isRequired
+  groupId: PropTypes.number.isRequired
 };
 
 function mapStateToProps(state, ownProps) {

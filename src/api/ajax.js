@@ -11,4 +11,3 @@ export default function Ajax(path, callback) {
   httpRequest.open('GET', path);
   httpRequest.send();
 }
-

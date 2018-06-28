@@ -7,10 +7,10 @@ require('./DeliveryOptionProductListContainer.scss');
 function DeliveryOptionProductListContainer({deliveryOption}) {
   return(
     <div className="DeliveryOptionProductListContainer">
-      {deliveryOption.deliveryGroups.map((deliveryGroup, groupIndex) => {
-        return deliveryOption[`deliveryGroup-${groupIndex}`].basketItems.map((item, index) => {
+      {deliveryOption.deliveryGroups.map((groupId) => {
+        return deliveryOption[`deliveryGroup-${groupId}`].basketItems.map((item, index) => {
           return (
-            <DeliveryOptionProductList focusItem={deliveryOption.focusItem} key={index} item={item} index={index} groupIndex={groupIndex}/>
+            <DeliveryOptionProductList focusItem={deliveryOption.focusItem} key={index} item={item} index={index} groupId={groupId}/>
           );
         });
       })
