@@ -4,7 +4,7 @@ import DeliveryOptionProductImage from '../DeliveryOptionProductImage/DeliveryOp
 
 require('./DeliveryOptionProductImageContainer.scss');
 
-function DeliveryOptionProductImageContainer({groupId, basketItems, openProductPreview}) {
+function DeliveryOptionProductImageContainer({groupId, deliveryEstimation, basketItems, openProductPreview}) {
   return (
     <div className="DeliveryOptionProductImageContainer">
       {basketItems.map((item, index) => {
@@ -25,12 +25,13 @@ function DeliveryOptionProductImageContainer({groupId, basketItems, openProductP
           </div>)
         }
       })}
-      <div className="DeliveryOptionProductImageContainer-deliveryEstimation">{}</div>
+      <div className="DeliveryOptionProductImageContainer-deliveryEstimation">{deliveryEstimation}</div>
     </div>);
 }
 
 DeliveryOptionProductImageContainer.propTypes = {
-  groupId: PropTypes.number,
+  groupId: PropTypes.number.isRequired,
+  deliveryEstimation: PropTypes.string,
   basketItems: PropTypes.array.isRequired,
   openProductPreview: PropTypes.func.isRequired
 };

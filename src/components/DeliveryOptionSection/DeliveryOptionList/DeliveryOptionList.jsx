@@ -10,10 +10,13 @@ function DeliveryOptionList({index, groupId, deliveryOption, selectedOptionType}
       <input type="radio" id={`DeliveryOptionListOptionType--${deliveryOption.optionType}`} checked={selectedOptionType === deliveryOption.optionType} value={deliveryOption.optionType} group-id={groupId} className="DeliveryOptionList-radio"/>
       <label htmlFor={`DeliveryOptionListOptionType--${deliveryOption.optionType}`} className="DeliveryOptionsList-label">
         <span className="DeliveryOptionList-type">{deliveryOption.optionName}</span>
-        <span className="DeliveryOptionList-estimation" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(deliveryOption.optionEstimation)}} />
-        {deliveryOption.optionAdvice.length > 6 ? <span className="DeliveryOptionList-info" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(deliveryOption.optionAdvice)}} /> : ""}
-        <span className="DeliveryOptionList-price" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(deliveryOption.optionDisplayPrice)}} />
-        <span className="DeliveryOptionList-discountedPrice" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(deliveryOption.optionDiscountedPrice)}} />
+        <span className="DeliveryOptionList-price">
+          <span className="DeliveryOptionList-originalPrice" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(deliveryOption.optionDisplayPrice)}} />
+          <span className="DeliveryOptionList-discountedPrice" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(deliveryOption.optionDiscountedPrice)}} />
+        </span>
+        {/*<span className="DeliveryOptionList-estimation" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(deliveryOption.optionEstimation)}} />*/}
+        {deliveryOption.optionAdvice.length > 6 && (selectedOptionType === deliveryOption.optionType) ? <span className="DeliveryOptionList-info" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(deliveryOption.optionAdvice)}} /> : ""}
+
       </label>
     </li>
   );

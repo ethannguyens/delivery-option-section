@@ -16,6 +16,7 @@ class DeliveryOptionGroupContainer extends React.Component {
 
     this.openProductPreview = this.openProductPreview.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.getDeliveryEstimation = this.getDeliveryEstimation.bind(this);
   }
 
   handleChange(event) {
@@ -27,10 +28,20 @@ class DeliveryOptionGroupContainer extends React.Component {
     this.props.actions.enableProductPreview();
   }
 
+  getDeliveryEstimation() {
+    for (let estimateData of this.props.deliveryGroup.basketItems[0].deliveryOptionEstimates) {
+      if (estimateData.optionType === this.props.deliveryGroup.selectedOptionType) {
+        return estimateData.displayText;
+      }
+    }
+  }
+
   render() {
     return (
       <div className="DeliveryOptionGroupContainer">
-        <DeliveryOptionProductImageContainer groupId={this.props.groupId} basketItems={this.props.deliveryGroup.basketItems}
+        <DeliveryOptionProductImageContainer groupId={this.props.groupId}
+                                             basketItems={this.props.deliveryGroup.basketItems}
+                                             deliveryEstimation={this.getDeliveryEstimation()}
                                              openProductPreview={this.openProductPreview}/>
         <DeliveryOptionListContainer handleChange={this.handleChange}
                                      groupId={this.props.groupId}

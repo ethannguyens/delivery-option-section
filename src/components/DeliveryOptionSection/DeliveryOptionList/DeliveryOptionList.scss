@@ -15,9 +15,10 @@
 
 .DeliveryOptionList-radio {
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: top;
+  position: relative;
+  top: 10px;
   margin-right: 10px;
-
   height: 16px;
   width: 16px;
 }
@@ -32,27 +33,25 @@
 
 
 .DeliveryOptionsList-label span {
-  display: block;
-
   font-size: 14px;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 16px;
   letter-spacing: 0.2px;
+  margin: 4px 0;
 }
 
 
 .DeliveryOptionList-type {
   color: #333333;
-
-  display: inline;
+  font-weight: 700;
   float: left;
   padding-right: 5px;
+  width: 100%;
 }
 
 
 .DeliveryOptionList-estimation:before {
   content: " - ";
-
   color: #777777;
   font-weight: normal;
 }
@@ -60,6 +59,7 @@
 
 .DeliveryOptionList-estimation {
   color: #333333;
+  width: 100%;
   font-weight: bold;
   display: block;
 }
@@ -67,15 +67,17 @@
 
 .DeliveryOptionList-info{
   color: #666666;
+  width: 100%;
 }
 
+.DeliveryOptionList-price {
+  width: 100%;
+  display: block;
+}
 
-.DeliveryOptionList-price{
+.DeliveryOptionList-originalPrice{
   color: #333333;
   text-decoration: line-through;
-
-  display: inline;
-  float: left;
   padding-right: 5px;
 }
 
